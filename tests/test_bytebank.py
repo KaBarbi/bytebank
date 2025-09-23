@@ -1,4 +1,5 @@
 from codigo.bytebank import Funcionario
+import pytest
 
 
 class TestClass:
@@ -44,3 +45,12 @@ class TestClass:
         resultado = funcionario_test.calcular_bonus()
 
         assert resultado == esperado
+
+    def test_quando_calcular_bonus_recebe_100000000_deve_retornar_exception(self):
+        with pytest.raises(Exception):
+            entrada = 100000000  
+
+            funconario_teste = Funcionario('teste', '11/11/2000', entrada)
+            resultado = funconario_teste.calcular_bonus()
+
+            assert resultado 
